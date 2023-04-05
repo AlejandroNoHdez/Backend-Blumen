@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 import com.example.blumen.models.UsuarioModel;
 
 @Repository
-public interface UsuarioRepository extends CrudRepository<UsuarioModel, Long>{
-    
-    public ArrayList<UsuarioModel> findByEstatus (Boolean estatus);
+public interface UsuarioRepository extends CrudRepository<UsuarioModel, Long>
+{
+
+	public ArrayList<UsuarioModel> findByEstatus(Boolean estatus);
 
 }

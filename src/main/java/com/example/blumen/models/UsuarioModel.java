@@ -1,7 +1,6 @@
 package com.example.blumen.models;
 
 import jakarta.persistence.Column;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,37 +9,40 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "usuarios")
+@Table(name = "usuarios")
 
-public class UsuarioModel {
+public class UsuarioModel
+{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
-    private Long id;
+	@Column(unique = true, nullable = false)
+	private Long id;
 	@Column(nullable = false)
-    private String nombre;
+	private String nombre;
 	@Column(nullable = false)
-    private String apellidoP;
+	private String apellidoP;
 	@Column(nullable = false)
-    private String apellidoM;
+	private String apellidoM;
 	@Column(nullable = false)
-    private String correo;
+	private String correo;
 	@Column(nullable = false)
-    private String password;
+	private String password;
 	@Column(nullable = false)
-    private Boolean estatus;
-	
+	private Boolean estatus;
+
 	@OneToOne(mappedBy = "usuario")
-    private UsuarioTieneDireccionModel utdm;
-	
+	private UsuarioTieneDireccionModel utdm;
+
 	@OneToOne(mappedBy = "usuario")
-    private PedidoTieneProductoModel ptpm;
-	
-	public UsuarioModel() {
+	private PedidoTieneProductoModel ptpm;
+
+	public UsuarioModel()
+	{
 	}
-	
+
 	public UsuarioModel(Long id, String nombre, String apellidoP, String apellidoM, String correo, String password,
-			Boolean estatus) {
+			Boolean estatus)
+	{
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidoP = apellidoP;
@@ -49,47 +51,74 @@ public class UsuarioModel {
 		this.password = password;
 		this.estatus = estatus;
 	}
-	
-	public Long getId() {
+
+	public Long getId()
+	{
 		return id;
 	}
-	public void setId(Long id) {
+
+	public void setId(Long id)
+	{
 		this.id = id;
 	}
-	public String getNombre() {
+
+	public String getNombre()
+	{
 		return nombre;
 	}
-	public void setNombre(String nombre) {
+
+	public void setNombre(String nombre)
+	{
 		this.nombre = nombre;
 	}
-	public String getApellidoP() {
+
+	public String getApellidoP()
+	{
 		return apellidoP;
 	}
-	public void setApellidoP(String apellidoP) {
+
+	public void setApellidoP(String apellidoP)
+	{
 		this.apellidoP = apellidoP;
 	}
-	public String getApellidoM() {
+
+	public String getApellidoM()
+	{
 		return apellidoM;
 	}
-	public void setApellidoM(String apellidoM) {
+
+	public void setApellidoM(String apellidoM)
+	{
 		this.apellidoM = apellidoM;
 	}
-	public String getCorreo() {
+
+	public String getCorreo()
+	{
 		return correo;
 	}
-	public void setCorreo(String correo) {
+
+	public void setCorreo(String correo)
+	{
 		this.correo = correo;
 	}
-	public String getPassword() {
+
+	public String getPassword()
+	{
 		return password;
 	}
-	public void setPassword(String password) {
+
+	public void setPassword(String password)
+	{
 		this.password = password;
 	}
-	public Boolean getEstatus() {
+
+	public Boolean getEstatus()
+	{
 		return estatus;
 	}
-	public void setEstatus(Boolean estatus) {
+
+	public void setEstatus(Boolean estatus)
+	{
 		this.estatus = estatus;
 	}
 }
